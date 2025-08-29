@@ -14,6 +14,12 @@ class StringCalculator {
     final tokens = numbers
         .split(RegExp(delimiterPattern))
         .where((e) => e.isNotEmpty);
+
+    final negatives = tokens.where((e) => int.parse(e) < 0).toList();
+    if (negatives.isNotEmpty) {
+      throw Exception('negative numbers not allowed: ${negatives.join(",")}');
+    }
+
     return tokens.map(int.parse).reduce((a, b) => a + b);
   }
 }

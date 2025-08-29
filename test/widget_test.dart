@@ -14,4 +14,7 @@ void main() {
   test('returns number for single number', () {
     expect(calculator.add("1"), equals(1));
   });
+  test('returns sum for two numbers', () {
+    expect(calculator.add("1,5"), equals(6));
+  });
 }

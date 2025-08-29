@@ -20,4 +20,7 @@ void main() {
   test('handle multiple numbers', () {
     expect(calculator.add("1,2,3,4"), equals(10));
   });
+  test('handle new lines between numbers', () {
+    expect(calculator.add("1\n2,3"), equals(6));
+  });
 }

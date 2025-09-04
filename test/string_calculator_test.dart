@@ -26,6 +26,9 @@ void main() {
   test('handle delimiter', () {
     expect(calculator.add("//;\n1;2"), equals(3));
   });
+  test('handle * if multiple', () {
+    expect(calculator.add("//*\n1*2"), equals(2));
+  });
   test('exception for negative numbers', () {
     expect(
       () => calculator.add("1,-2,3,-4"),

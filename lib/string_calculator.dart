@@ -20,6 +20,10 @@ class StringCalculator {
       throw Exception('negative numbers not allowed: ${negatives.join(",")}');
     }
 
-    return tokens.map(int.parse).reduce((a, b) => a + b);
+    return delimiterPattern.contains('*') == true
+        ? tokens.map(int.parse).reduce((a, b) => a * b)
+        : tokens.map(int.parse).reduce((a, b) => a + b);
   }
+
+  //  }
 }
